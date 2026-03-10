@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | Coder2Career</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1a1a1a',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-secondary font-sans">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary">Coder2Career</a>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="index.html" class="hover:text-primary transition">HOME</a>
+                <a href="courses.html" class="text-primary font-bold">COURSES</a>
+                <a href="internships.html" class="hover:text-primary transition">INTERNSHIPS</a>
+                <a href="about.html" class="hover:text-primary transition">ABOUT</a>
+                <a href="contact.html" class="hover:text-primary transition">CONTACT</a>
+            </div>
+            <button class="md:hidden text-2xl" id="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="hidden md:hidden bg-white border-t px-6 py-4 space-y-4" id="mobile-menu">
+            <a href="index.html" class="block hover:text-primary">HOME</a>
+            <a href="courses.html" class="block text-primary font-bold">COURSES</a>
+            <a href="internships.html" class="block hover:text-primary">INTERNSHIPS</a>
+            <a href="about.html" class="block hover:text-primary">ABOUT</a>
+            <a href="contact.html" class="block hover:text-primary">CONTACT</a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="bg-secondary text-white py-16 text-center">
+        <h1 class="text-4xl font-bold mb-4">Our Technical Courses</h1>
+        <p class="text-gray-400">Master the most in-demand technologies with industry experts.</p>
+    </section>
+
+    <!-- Courses Grid -->
+    <section class="py-20 container mx-auto px-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Programming Languages -->
+            <div class="border rounded-xl p-6 hover:border-primary transition">
+                <div class="text-primary text-3xl mb-4"><i class="fas fa-laptop-code"></i></div>
+                <h3 class="text-xl font-bold mb-2">Foundation Languages</h3>
+                <p class="text-gray-600 mb-4">Master the basics with C, C++, Java, and Python.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">C</span>
+                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">C++</span>
+                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">Java</span>
+                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">Python</span>
+                </div>
+            </div>
+
+            <!-- DSA -->
+            <div class="border rounded-xl p-6 hover:border-primary transition">
+                <div class="text-primary text-3xl mb-4"><i class="fas fa-brain"></i></div>
+                <h3 class="text-xl font-bold mb-2">Data Structures & Algo</h3>
+                <p class="text-gray-600 mb-4">The core of computer science. Prepare for top product companies.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">Arrays</span>
+                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">Trees</span>
+                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">Graphs</span>
+                </div>
+            </div>
+
+            <!-- Web Development -->
+            <div class="border rounded-xl p-6 hover:border-primary transition">
+                <div class="text-primary text-3xl mb-4"><i class="fas fa-globe"></i></div>
+                <h3 class="text-xl font-bold mb-2">Web Development</h3>
+                <p class="text-gray-600 mb-4">Modern web design using HTML, CSS, and JavaScript.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">HTML5</span>
+                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">CSS3</span>
+                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">JavaScript</span>
+                </div>
+            </div>
+
+            <!-- MERN Stack -->
+            <div class="border rounded-xl p-6 hover:border-primary transition flex flex-col">
+                <div class="text-primary text-3xl mb-4"><i class="fab fa-react"></i></div>
+                <h3 class="text-xl font-bold mb-2">MERN Stack</h3>
+                <p class="text-gray-600 mb-4">Build full-stack scalable web applications.</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">MongoDB</span>
+                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">Express</span>
+                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">React</span>
+                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">Node.js</span>
+                </div>
+                <a href="course-detail.html" class="mt-auto text-primary font-bold hover:underline">View Details <i class="fas fa-arrow-right text-xs"></i></a>
+            </div>
+
+            <!-- Mobile Development -->
+            <div class="border rounded-xl p-6 hover:border-primary transition">
+                <div class="text-primary text-3xl mb-4"><i class="fas fa-mobile-alt"></i></div>
+                <h3 class="text-xl font-bold mb-2">Mobile App Development</h3>
+                <p class="text-gray-600 mb-4">Cross-platform development for iOS and Android.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">Flutter</span>
+                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">React Native</span>
+                </div>
+            </div>
+
+            <!-- AI/ML & Database -->
+            <div class="border rounded-xl p-6 hover:border-primary transition">
+                <div class="text-primary text-3xl mb-4"><i class="fas fa-microchip"></i></div>
+                <h3 class="text-xl font-bold mb-2">AI/ML & Database</h3>
+                <p class="text-gray-600 mb-4">Data-driven intelligence and management.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">AI</span>
+                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">Machine Learning</span>
+                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">MySQL</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mock Interviews Section -->
+    <section class="py-20 bg-blue-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6">Placement Preparation</h2>
+            <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-10">We don't just teach coding; we prepare you for the job. Our mock interviews simulate real-world hiring processes at top tech firms.</p>
+            <a href="contact.html" class="bg-primary text-white px-10 py-4 rounded-full font-bold shadow-lg hover:bg-blue-700 transition">Book a Mock Interview</a>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index) -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="container mx-auto px-6 text-center md:text-left">
+            <div class="grid md:grid-cols-4 gap-8 mb-8 border-b border-gray-700 pb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold text-primary mb-4">Coder2Career</h3>
+                    <p class="text-gray-400 max-w-sm">Training the next generation of tech leaders and delivering excellence in software development.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="courses.html" class="hover:text-primary">Courses</a></li>
+                        <li><a href="internships.html" class="hover:text-primary">Internships</a></li>
+                        <li><a href="about.html" class="hover:text-primary">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 uppercase tracking-wider">Contact</h4>
+                    <p class="text-gray-400">coder2career@gmail.com</p>
+                    <p class="text-gray-400 mt-2">Indore, Madhya Pradesh</p>
+                </div>
+            </div>
+            <div class="text-center text-gray-500 text-sm">
+                &copy; 2026 Coder2Career. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

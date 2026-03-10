@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERN Stack Course | Coder2Career</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1a1a1a',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-secondary font-sans">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary">Coder2Career</a>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="index.html" class="hover:text-primary transition">HOME</a>
+                <a href="courses.html" class="text-primary font-bold">COURSES</a>
+                <a href="internships.html" class="hover:text-primary transition">INTERNSHIPS</a>
+                <a href="about.html" class="hover:text-primary transition">ABOUT</a>
+                <a href="contact.html" class="hover:text-primary transition">CONTACT</a>
+            </div>
+            <button class="md:hidden text-2xl" id="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="hidden md:hidden bg-white border-t px-6 py-4 space-y-4" id="mobile-menu">
+            <a href="index.html" class="block hover:text-primary">HOME</a>
+            <a href="courses.html" class="block text-primary font-bold">COURSES</a>
+            <a href="internships.html" class="block hover:text-primary">INTERNSHIPS</a>
+            <a href="about.html" class="block hover:text-primary">ABOUT</a>
+            <a href="contact.html" class="block hover:text-primary">CONTACT</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="relative bg-secondary text-white py-24 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1920&q=80" alt="Coding Background" class="absolute inset-0 w-full h-full object-cover opacity-20">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-2/3 mb-8 md:mb-0">
+                    <div class="flex items-center gap-2 text-primary mb-4">
+                        <span class="bg-primary text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wider">Most Popular</span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">MERN Stack <br><span class="text-primary">Mastery Course</span></h1>
+                    <p class="text-gray-300 text-xl mb-8 max-w-2xl">Master the art of building scalable, modern web applications from scratch. Go from zero to deployment-ready in 16 weeks.</p>
+                    <div class="flex flex-wrap gap-6 text-sm font-medium">
+                        <div class="flex items-center gap-2"><i class="far fa-clock text-primary text-lg"></i> 4 Months (160+ Hours)</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-video text-primary text-lg"></i> Live Interactive Sessions</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-users text-primary text-lg"></i> Limited Batch Size</div>
+                    </div>
+                </div>
+                <div class="md:w-1/3">
+                    <div class="bg-white text-secondary p-8 rounded-3xl shadow-2xl border border-gray-100 transform md:scale-110">
+                        <div class="text-4xl font-black mb-2 text-primary">₹14,999</div>
+                        <div class="text-sm text-gray-500 line-through mb-6">Original Price: ₹24,999 (40% OFF)</div>
+                        <ul class="space-y-4 mb-8 text-sm">
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500 text-lg"></i> <span>100% Placement Assistance</span></li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500 text-lg"></i> <span>Real-world Industry Projects</span></li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-green-500 text-lg"></i> <span>Personalized Mentorship</span></li>
+                        </ul>
+                        <a href="contact.html" class="block text-center bg-primary text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200 uppercase tracking-widest">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-24 container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row gap-16">
+            <div class="lg:w-2/3">
+                <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                    <span class="w-2 h-8 bg-primary rounded-full"></span>
+                    Course Syllabus
+                </h2>
+                
+                <div class="grid gap-6 mb-16">
+                    <div class="group border rounded-2xl p-6 hover:shadow-md transition-all bg-gray-50 hover:bg-white border-transparent hover:border-blue-100">
+                        <div class="flex justify-between items-center mb-4">
+                            <h4 class="font-bold text-xl text-secondary">Module 1: Modern JavaScript & React Basics</h4>
+                            <span class="text-primary font-bold">Week 1-4</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">ES6+ features, Functional components, JSX, Hooks (useState, useEffect), and building responsive UIs with Tailwind CSS.</p>
+                    </div>
+
+                    <div class="group border rounded-2xl p-6 hover:shadow-md transition-all bg-gray-50 hover:bg-white border-transparent hover:border-blue-100">
+                        <div class="flex justify-between items-center mb-4">
+                            <h4 class="font-bold text-xl text-secondary">Module 2: Server Side with Node.js & Express</h4>
+                            <span class="text-primary font-bold">Week 5-8</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">Architecture of Node.js, Express middleware, Routing, REST API design principles, and JWT authentication.</p>
+                    </div>
+
+                    <div class="group border rounded-2xl p-6 hover:shadow-md transition-all bg-gray-50 hover:bg-white border-transparent hover:border-blue-100">
+                        <div class="flex justify-between items-center mb-4">
+                            <h4 class="font-bold text-xl text-secondary">Module 3: Database Mastery with MongoDB</h4>
+                            <span class="text-primary font-bold">Week 9-12</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">NoSQL concepts, Schema design with Mongoose, CRUD operations, Aggregation pipelines, and Database security.</p>
+                    </div>
+
+                    <div class="group border rounded-2xl p-6 hover:shadow-md transition-all bg-gray-50 hover:bg-white border-transparent hover:border-blue-100">
+                        <div class="flex justify-between items-center mb-4">
+                            <h4 class="font-bold text-xl text-secondary">Module 4: Deployment & Final Capstone</h4>
+                            <span class="text-primary font-bold">Week 13-16</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">Testing, CI/CD pipelines, Docker basics, and deploying your full-scale application to AWS/Heroku.</p>
+                    </div>
+                </div>
+
+                <!-- Certificate Section -->
+                <div class="bg-gray-900 rounded-3xl p-8 md:p-12 text-white overflow-hidden relative">
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-bold mb-6">Earn a Professional Certificate</h3>
+                        <p class="text-gray-400 mb-10 max-w-xl">Validate your skills with a Coder2Career certification. Our certificates are recognized by top tech companies and are verifiable online.</p>
+                        
+                        <div class="bg-white p-4 rounded-xl shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500 mx-auto max-w-lg">
+                            <!-- Sample Certificate Image -->
+                            <img src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&w=800&q=80" alt="Sample Certificate" class="w-full h-auto rounded shadow-inner">
+                            <div class="text-center mt-4 py-2 border-t border-dashed">
+                                <p class="text-secondary font-serif italic text-lg font-bold">Certificate of Excellence</p>
+                                <p class="text-gray-400 text-xs mt-1">Authorized by Coder2Career Education Board</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Decorative background for certificate section -->
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary opacity-10 rounded-full -mr-32 -mt-32"></div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:w-1/3">
+                <div class="space-y-8 sticky top-24">
+                    <div class="bg-blue-50 p-8 rounded-3xl">
+                        <h3 class="text-xl font-bold mb-6 border-b pb-4 border-blue-100">Course Features</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm"><i class="fas fa-briefcase text-primary"></i></div>
+                                <div><p class="font-bold text-sm">Job Guarantee</p><p class="text-xs text-gray-500">Terms apply</p></div>
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm"><i class="fas fa-code text-primary"></i></div>
+                                <div><p class="font-bold text-sm">30+ Assignments</p><p class="text-xs text-gray-500">Hands-on practice</p></div>
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm"><i class="fas fa-headset text-primary"></i></div>
+                                <div><p class="font-bold text-sm">24/7 Slack Support</p><p class="text-xs text-gray-500">Instant doubt clearing</p></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="p-8 border-2 border-dashed border-gray-200 rounded-3xl text-center">
+                        <p class="text-gray-500 mb-4 font-medium">Have questions?</p>
+                        <a href="tel:+919999999999" class="text-xl font-bold text-secondary block hover:text-primary transition">+91 99999-99999</a>
+                        <p class="text-xs text-gray-400 mt-2 uppercase tracking-widest font-bold">Mon - Sat, 10am - 7pm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8 border-b border-gray-700 pb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold text-primary mb-4">Coder2Career</h3>
+                    <p class="text-gray-400 max-w-sm">Training the next generation of tech leaders and delivering excellence in software development.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="courses.html" class="hover:text-primary">Courses</a></li>
+                        <li><a href="internships.html" class="hover:text-primary">Internships</a></li>
+                        <li><a href="about.html" class="hover:text-primary">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 uppercase tracking-wider">Contact</h4>
+                    <p class="text-gray-400">coder2career@gmail.com</p>
+                    <p class="text-gray-400 mt-2">Indore, Madhya Pradesh</p>
+                </div>
+            </div>
+            <div class="text-center text-gray-500 text-sm">
+                &copy; 2026 Coder2Career. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
