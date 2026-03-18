@@ -20,6 +20,12 @@
     </script>
 </head>
 <body class="bg-white text-secondary font-sans">
+    <div id="site-loader" class="fixed inset-0 bg-white z-[9999] flex items-center justify-center">
+        <div class="flex flex-col items-center gap-4">
+            <div class="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+            <div class="text-xl font-bold text-secondary tracking-widest">coder2carrer</div>
+        </div>
+    </div>
 
     <!-- Navigation -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
@@ -31,6 +37,7 @@
                 <a href="internships.html" class="hover:text-primary transition">INTERNSHIPS</a>
                 <a href="about.html" class="hover:text-primary transition">ABOUT</a>
                 <a href="contact.html" class="hover:text-primary transition">CONTACT</a>
+                <a href="https://wa.me/9893214874" class="bg-primary text-white px-4 py-2 rounded-full font-bold hover:bg-blue-700 transition shadow-sm">CHAT WITH US</a>
             </div>
             <button class="md:hidden text-2xl" id="menu-btn">
                 <i class="fas fa-bars"></i>
@@ -42,6 +49,7 @@
             <a href="internships.html" class="block hover:text-primary">INTERNSHIPS</a>
             <a href="about.html" class="block hover:text-primary">ABOUT</a>
             <a href="contact.html" class="block hover:text-primary">CONTACT</a>
+            <a href="https://wa.me/9893214874" class="block bg-primary text-white text-center px-4 py-2 rounded-lg font-bold hover:bg-blue-700 transition">CHAT WITH US</a>
         </div>
     </nav>
 
@@ -54,77 +62,111 @@
     <!-- Courses Grid -->
     <section class="py-20 container mx-auto px-6">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Programming Languages -->
-            <div class="border rounded-xl p-6 hover:border-primary transition">
-                <div class="text-primary text-3xl mb-4"><i class="fas fa-laptop-code"></i></div>
-                <h3 class="text-xl font-bold mb-2">Foundation Languages</h3>
-                <p class="text-gray-600 mb-4">Master the basics with C, C++, Java, and Python.</p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">C</span>
-                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">C++</span>
-                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">Java</span>
-                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">Python</span>
+            <div class="border rounded-xl overflow-hidden hover:border-primary transition bg-white shadow-sm">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C Programming" class="w-full h-40 object-contain bg-gray-50 p-6">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">C Programming</h3>
+                    <p class="text-gray-600 mb-4">Build strong fundamentals in memory, pointers, and structured programming.</p>
+                    <a href="c-course.html" class="text-primary font-bold hover:underline">View Details <i class="fas fa-arrow-right text-xs"></i></a>
                 </div>
             </div>
 
-            <!-- DSA -->
-            <div class="border rounded-xl p-6 hover:border-primary transition">
-                <div class="text-primary text-3xl mb-4"><i class="fas fa-brain"></i></div>
-                <h3 class="text-xl font-bold mb-2">Data Structures & Algo</h3>
-                <p class="text-gray-600 mb-4">The core of computer science. Prepare for top product companies.</p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">Arrays</span>
-                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">Trees</span>
-                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">Graphs</span>
+            <div class="border rounded-xl overflow-hidden hover:border-primary transition bg-white shadow-sm">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++ Programming" class="w-full h-40 object-contain bg-gray-50 p-6">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">C++ Programming</h3>
+                    <p class="text-gray-600 mb-4">Master OOP, STL, and high-performance programming techniques.</p>
+                    <a href="cpp-course.html" class="text-primary font-bold hover:underline">View Details <i class="fas fa-arrow-right text-xs"></i></a>
                 </div>
             </div>
 
-            <!-- Web Development -->
-            <div class="border rounded-xl p-6 hover:border-primary transition">
-                <div class="text-primary text-3xl mb-4"><i class="fas fa-globe"></i></div>
-                <h3 class="text-xl font-bold mb-2">Web Development</h3>
-                <p class="text-gray-600 mb-4">Modern web design using HTML, CSS, and JavaScript.</p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">HTML5</span>
-                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">CSS3</span>
-                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">JavaScript</span>
+            <div class="border rounded-xl overflow-hidden hover:border-primary transition bg-white shadow-sm">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java Programming" class="w-full h-40 object-contain bg-gray-50 p-6">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Java Programming</h3>
+                    <p class="text-gray-600 mb-4">Object-oriented development with Java, collections, and JVM basics.</p>
+                    <a href="java-course.html" class="text-primary font-bold hover:underline">View Details <i class="fas fa-arrow-right text-xs"></i></a>
                 </div>
             </div>
 
-            <!-- MERN Stack -->
-            <div class="border rounded-xl p-6 hover:border-primary transition flex flex-col">
-                <div class="text-primary text-3xl mb-4"><i class="fab fa-react"></i></div>
-                <h3 class="text-xl font-bold mb-2">MERN Stack</h3>
-                <p class="text-gray-600 mb-4">Build full-stack scalable web applications.</p>
-                <div class="flex flex-wrap gap-2 mb-6">
-                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">MongoDB</span>
-                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">Express</span>
-                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">React</span>
-                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">Node.js</span>
-                </div>
-                <a href="course-detail.html" class="mt-auto text-primary font-bold hover:underline">View Details <i class="fas fa-arrow-right text-xs"></i></a>
-            </div>
-
-            <!-- Mobile Development -->
-            <div class="border rounded-xl p-6 hover:border-primary transition">
-                <div class="text-primary text-3xl mb-4"><i class="fas fa-mobile-alt"></i></div>
-                <h3 class="text-xl font-bold mb-2">Mobile App Development</h3>
-                <p class="text-gray-600 mb-4">Cross-platform development for iOS and Android.</p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">Flutter</span>
-                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">React Native</span>
+            <div class="border rounded-xl overflow-hidden hover:border-primary transition bg-white shadow-sm">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Programming" class="w-full h-40 object-contain bg-gray-50 p-6">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Python Programming</h3>
+                    <p class="text-gray-600 mb-4">Write clean Python code for automation, data, and web apps.</p>
+                    <a href="python-course.html" class="text-primary font-bold hover:underline">View Details <i class="fas fa-arrow-right text-xs"></i></a>
                 </div>
             </div>
 
-            <!-- AI/ML & Database -->
-            <div class="border rounded-xl p-6 hover:border-primary transition">
-                <div class="text-primary text-3xl mb-4"><i class="fas fa-microchip"></i></div>
-                <h3 class="text-xl font-bold mb-2">AI/ML & Database</h3>
-                <p class="text-gray-600 mb-4">Data-driven intelligence and management.</p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">AI</span>
-                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">Machine Learning</span>
-                    <span class="bg-blue-100 text-primary text-xs px-2 py-1 rounded">MySQL</span>
+            <div class="border rounded-xl overflow-hidden hover:border-primary transition bg-white shadow-sm">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js Development" class="w-full h-40 object-contain bg-gray-50 p-6">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Next.js Development</h3>
+                    <p class="text-gray-600 mb-4">Server-side rendering, routing, and production-ready React apps.</p>
+                    <a href="nextjs-course.html" class="text-primary font-bold hover:underline">View Details <i class="fas fa-arrow-right text-xs"></i></a>
+                </div>
+            </div>
+
+            <div class="border rounded-xl overflow-hidden hover:border-primary transition bg-white shadow-sm">
+                <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80" alt="Data Structures and Algorithms" class="w-full h-40 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Data Structures & Algorithms</h3>
+                    <p class="text-gray-600 mb-4">Core CS foundations for interviews and problem-solving.</p>
+                    <a href="dsa-course.html" class="text-primary font-bold hover:underline">View Details <i class="fas fa-arrow-right text-xs"></i></a>
+                </div>
+            </div>
+
+            <div class="border rounded-xl overflow-hidden hover:border-primary transition bg-white shadow-sm">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="Web Development" class="w-full h-40 object-contain bg-gray-50 p-6">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Web Development</h3>
+                    <p class="text-gray-600 mb-4">HTML, CSS, and JavaScript for responsive web interfaces.</p>
+                    <a href="web-development-course.html" class="text-primary font-bold hover:underline">View Details <i class="fas fa-arrow-right text-xs"></i></a>
+                </div>
+            </div>
+
+            <div class="border rounded-xl overflow-hidden hover:border-primary transition bg-white shadow-sm">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="MERN Stack" class="w-full h-40 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">MERN Stack</h3>
+                    <p class="text-gray-600 mb-4">Build full-stack applications with MongoDB, Express, React, and Node.</p>
+                    <a href="course-detail.html" class="text-primary font-bold hover:underline">View Details <i class="fas fa-arrow-right text-xs"></i></a>
+                </div>
+            </div>
+
+            <div class="border rounded-xl overflow-hidden hover:border-primary transition bg-white shadow-sm">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter Development" class="w-full h-40 object-contain bg-gray-50 p-6">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Flutter Development</h3>
+                    <p class="text-gray-600 mb-4">Cross-platform apps with Dart and Flutter widgets.</p>
+                    <a href="flutter-course.html" class="text-primary font-bold hover:underline">View Details <i class="fas fa-arrow-right text-xs"></i></a>
+                </div>
+            </div>
+
+            <div class="border rounded-xl overflow-hidden hover:border-primary transition bg-white shadow-sm">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native Development" class="w-full h-40 object-contain bg-gray-50 p-6">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">React Native</h3>
+                    <p class="text-gray-600 mb-4">Build iOS and Android apps using React Native and Expo.</p>
+                    <a href="react-native-course.html" class="text-primary font-bold hover:underline">View Details <i class="fas fa-arrow-right text-xs"></i></a>
+                </div>
+            </div>
+
+            <div class="border rounded-xl overflow-hidden hover:border-primary transition bg-white shadow-sm">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="AI and Machine Learning" class="w-full h-40 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">AI / Machine Learning</h3>
+                    <p class="text-gray-600 mb-4">Learn data prep, ML fundamentals, and real-world projects.</p>
+                    <a href="aiml-course.html" class="text-primary font-bold hover:underline">View Details <i class="fas fa-arrow-right text-xs"></i></a>
+                </div>
+            </div>
+
+            <div class="border rounded-xl overflow-hidden hover:border-primary transition bg-white shadow-sm">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL Database" class="w-full h-40 object-contain bg-gray-50 p-6">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">MySQL Database</h3>
+                    <p class="text-gray-600 mb-4">Design schemas, write queries, and manage relational data.</p>
+                    <a href="mysql-course.html" class="text-primary font-bold hover:underline">View Details <i class="fas fa-arrow-right text-xs"></i></a>
                 </div>
             </div>
         </div>
@@ -160,6 +202,8 @@
                     <h4 class="font-bold mb-4 uppercase tracking-wider">Contact</h4>
                     <p class="text-gray-400">coder2career@gmail.com</p>
                     <p class="text-gray-400 mt-2">Indore, Madhya Pradesh</p>
+                    <p class="text-gray-400 mt-2"><a href="tel:9755550213" class="hover:text-primary">9755550213</a></p>
+                    <p class="text-gray-400 mt-2"><a href="tel:9893214874" class="hover:text-primary">9893214874</a></p>
                 </div>
             </div>
             <div class="text-center text-gray-500 text-sm">
@@ -172,6 +216,25 @@
         document.getElementById('menu-btn').addEventListener('click', () => {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
+
+        const loader = document.getElementById('site-loader');
+        const loaderKey = 'c2c_loaded';
+        if (loader) {
+            const hasLoaded = localStorage.getItem(loaderKey);
+            if (hasLoaded) {
+                loader.classList.add('hidden');
+            } else {
+                document.body.classList.add('overflow-hidden');
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        loader.classList.add('hidden');
+                        document.body.classList.remove('overflow-hidden');
+                        localStorage.setItem(loaderKey, '1');
+                    }, 800);
+                });
+            }
+        }
     </script>
 </body>
 </html>
+
