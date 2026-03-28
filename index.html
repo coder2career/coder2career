@@ -18,6 +18,13 @@
             }
         }
     </script>
+    <noscript>
+        <style>
+            #site-loader {
+                display: none !important;
+            }
+        </style>
+    </noscript>
     <style>
         @tailwind base;
         @tailwind components;
@@ -26,13 +33,143 @@
         .form-input {
             @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none;
         }
+
+        #site-loader {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.7s ease, visibility 0.7s ease;
+        }
+
+        #site-loader.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-stage {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            transition: opacity 0.8s ease, transform 0.8s ease, visibility 0.8s ease;
+        }
+
+        .loader-stage.is-visible {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+
+        .loader-stage.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: scale(1.03);
+        }
+
+        .splash-stage-bg {
+            background:
+                radial-gradient(circle at top, rgba(37, 99, 235, 0.32), transparent 42%),
+                linear-gradient(135deg, #020617 0%, #0f172a 52%, #111827 100%);
+        }
+
+        .splash-banner {
+            width: min(92vw, 1180px);
+            max-height: 86vh;
+            object-fit: contain;
+            border-radius: 28px;
+            box-shadow: 0 30px 80px rgba(15, 23, 42, 0.55);
+        }
+
+        .spinner-stage-bg {
+            background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+        }
+
+        .loader-spinner-shell {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            animation: growPulse 1.6s ease-in-out infinite;
+        }
+
+        .loader-spinner-ring {
+            position: absolute;
+            inset: 0;
+            border: 8px solid rgba(37, 99, 235, 0.18);
+            border-top-color: #2563eb;
+            border-radius: 9999px;
+            animation: spin 1s linear infinite;
+        }
+
+        .loader-spinner-glow {
+            position: absolute;
+            inset: 20px;
+            border-radius: 9999px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.28) 0%, rgba(37, 99, 235, 0.06) 48%, rgba(37, 99, 235, 0) 72%);
+        }
+
+        .loader-caption {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.45em;
+            text-transform: uppercase;
+            color: #2563eb;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes growPulse {
+            0%,
+            100% {
+                transform: scale(0.84);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .splash-banner {
+                width: 92vw;
+                border-radius: 20px;
+            }
+
+            .loader-spinner-shell {
+                width: 86px;
+                height: 86px;
+            }
+
+            .loader-spinner-ring {
+                border-width: 7px;
+            }
+
+            .loader-caption {
+                font-size: 0.75rem;
+                letter-spacing: 0.3em;
+            }
+        }
     </style>
 </head>
-<body class="bg-white text-secondary font-sans">
-    <div id="site-loader" class="fixed inset-0 bg-white z-[9999] flex items-center justify-center">
-        <div class="flex flex-col items-center gap-4">
-            <div class="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
-            <div class="text-xl font-bold text-secondary tracking-widest">coder2carrer</div>
+<body class="bg-white text-secondary font-sans overflow-hidden">
+    <div id="site-loader" class="fixed inset-0 z-[9999]" aria-live="polite" aria-label="Loading Coder2Career homepage">
+        <div id="splash-stage" class="loader-stage splash-stage-bg is-visible">
+            <img src="banner.jpg" alt="Coder2Career banner" class="splash-banner">
+        </div>
+        <div id="spinner-stage" class="loader-stage spinner-stage-bg is-hidden">
+            <div class="flex flex-col items-center gap-8">
+                <div class="loader-spinner-shell" aria-hidden="true">
+                    <div class="loader-spinner-ring"></div>
+                    <div class="loader-spinner-glow"></div>
+                </div>
+                <div class="loader-caption">Loading C2C</div>
+            </div>
         </div>
     </div>
 
@@ -221,21 +358,37 @@
         });
 
         const loader = document.getElementById('site-loader');
-        const loaderKey = 'c2c_loaded';
-        if (loader) {
-            const hasLoaded = localStorage.getItem(loaderKey);
-            if (hasLoaded) {
-                loader.classList.add('hidden');
-            } else {
-                document.body.classList.add('overflow-hidden');
-                window.addEventListener('load', () => {
-                    setTimeout(() => {
-                        loader.classList.add('hidden');
-                        document.body.classList.remove('overflow-hidden');
-                        localStorage.setItem(loaderKey, '1');
-                    }, 800);
-                });
-            }
+        const splashStage = document.getElementById('splash-stage');
+        const spinnerStage = document.getElementById('spinner-stage');
+        const splashDuration = 5000;
+        const spinnerDuration = 4000;
+
+        if (loader && splashStage && spinnerStage) {
+            let loaderDismissed = false;
+
+            const hideLoader = () => {
+                if (loaderDismissed) {
+                    return;
+                }
+
+                loaderDismissed = true;
+                loader.classList.add('is-hidden');
+                document.body.classList.remove('overflow-hidden');
+                window.setTimeout(() => {
+                    loader.remove();
+                }, 700);
+            };
+
+            window.setTimeout(() => {
+                splashStage.classList.remove('is-visible');
+                splashStage.classList.add('is-hidden');
+                spinnerStage.classList.remove('is-hidden');
+                spinnerStage.classList.add('is-visible');
+            }, splashDuration);
+
+            window.setTimeout(hideLoader, splashDuration + spinnerDuration);
+        } else {
+            document.body.classList.remove('overflow-hidden');
         }
     </script>
 </body>
