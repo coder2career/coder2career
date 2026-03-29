@@ -3,7 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coder2Career | IT Services & Technical Training</title>
+        <title>Coder2Career | IT Training, Internships and Software Development</title>
+    <meta name="description" content="Coder2Career delivers technical training, internships, and software development services in Indore with programs in MERN, Python, Flutter, AI and machine learning, and more.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Coder2Career">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="canonical" href="https://coder2career.com/">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="site.webmanifest">
+    <meta property="og:site_name" content="Coder2Career">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:title" content="Coder2Career | IT Training, Internships and Software Development">
+    <meta property="og:description" content="Coder2Career delivers technical training, internships, and software development services in Indore with programs in MERN, Python, Flutter, AI and machine learning, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://coder2career.com/banner.jpg">
+    <meta property="og:url" content="https://coder2career.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Coder2Career | IT Training, Internships and Software Development">
+    <meta name="twitter:description" content="Coder2Career delivers technical training, internships, and software development services in Indore with programs in MERN, Python, Flutter, AI and machine learning, and more.">
+    <meta name="twitter:image" content="https://coder2career.com/banner.jpg">
+        <script type="application/ld+json">
+{
+    "@context":  "https://schema.org",
+    "@graph":  [
+                   {
+                       "@type":  "EducationalOrganization",
+                       "@id":  "https://coder2career.com/#organization",
+                       "name":  "Coder2Career",
+                       "url":  "https://coder2career.com",
+                       "description":  "Coder2Career offers technical training, internships, and software development services in Indore, Madhya Pradesh.",
+                       "email":  "coder2career@gmail.com",
+                       "telephone":  "+91-9755550213",
+                       "address":  {
+                                       "@type":  "PostalAddress",
+                                       "addressLocality":  "Indore",
+                                       "addressRegion":  "Madhya Pradesh",
+                                       "addressCountry":  "IN"
+                                   }
+                   },
+                   {
+                       "@type":  "WebSite",
+                       "name":  "Coder2Career",
+                       "url":  "https://coder2career.com",
+                       "description":  "Coder2Career delivers technical training, internships, and software development services in Indore with programs in MERN, Python, Flutter, AI and machine learning, and more.",
+                       "inLanguage":  "en-IN",
+                       "publisher":  {
+                                         "@id":  "https://coder2career.com/#organization"
+                                     }
+                   }
+               ]
+}
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script>
@@ -73,14 +123,14 @@
             background:
                 radial-gradient(circle at top, rgba(37, 99, 235, 0.32), transparent 42%),
                 linear-gradient(135deg, #020617 0%, #0f172a 52%, #111827 100%);
+            padding: 0;
         }
 
         .splash-banner {
-            width: min(92vw, 1180px);
-            max-height: 86vh;
-            object-fit: contain;
-            border-radius: 28px;
-            box-shadow: 0 30px 80px rgba(15, 23, 42, 0.55);
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            display: block;
         }
 
         .spinner-stage-bg {
@@ -137,8 +187,8 @@
 
         @media (max-width: 640px) {
             .splash-banner {
-                width: 92vw;
-                border-radius: 20px;
+                width: 100vw;
+                height: 100vh;
             }
 
             .loader-spinner-shell {
@@ -157,7 +207,7 @@
         }
     </style>
 </head>
-<body class="bg-white text-secondary font-sans overflow-hidden">
+<body class="bg-white text-secondary font-sans">
     <div id="site-loader" class="fixed inset-0 z-[9999]" aria-live="polite" aria-label="Loading Coder2Career homepage">
         <div id="splash-stage" class="loader-stage splash-stage-bg is-visible">
             <img src="banner.jpg" alt="Coder2Career banner" class="splash-banner">
@@ -202,8 +252,11 @@
 
     <!-- Hero Section -->
     <header class="relative bg-white py-20 px-6 overflow-hidden">
-        <!-- SVG Background Pattern -->
-        <img src="./assets/landing.svg" alt="background pattern" class="absolute inset-0 z-0 opacity-5 w-full h-full object-cover">
+        <!-- Decorative Background -->
+        <div aria-hidden="true" class="absolute inset-0 z-0 opacity-70">
+            <div class="absolute -top-24 left-0 h-72 w-72 rounded-full bg-blue-100 blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-blue-50 blur-3xl"></div>
+        </div>
 
         <div class="container mx-auto flex flex-col md:flex-row items-center relative z-10">
             <div class="md:w-1/2 mb-10 md:mb-0">
@@ -360,11 +413,23 @@
         const loader = document.getElementById('site-loader');
         const splashStage = document.getElementById('splash-stage');
         const spinnerStage = document.getElementById('spinner-stage');
-        const splashDuration = 5000;
-        const spinnerDuration = 4000;
+        const loaderKey = 'c2c_loaded';
+        const splashDuration = 1200;
+        const spinnerLead = 900;
 
         if (loader && splashStage && spinnerStage) {
             let loaderDismissed = false;
+
+            const showSpinner = () => {
+                if (loaderDismissed) {
+                    return;
+                }
+
+                splashStage.classList.remove('is-visible');
+                splashStage.classList.add('is-hidden');
+                spinnerStage.classList.remove('is-hidden');
+                spinnerStage.classList.add('is-visible');
+            };
 
             const hideLoader = () => {
                 if (loaderDismissed) {
@@ -374,23 +439,22 @@
                 loaderDismissed = true;
                 loader.classList.add('is-hidden');
                 document.body.classList.remove('overflow-hidden');
+                localStorage.setItem(loaderKey, '1');
                 window.setTimeout(() => {
                     loader.remove();
                 }, 700);
             };
 
-            window.setTimeout(() => {
-                splashStage.classList.remove('is-visible');
-                splashStage.classList.add('is-hidden');
-                spinnerStage.classList.remove('is-hidden');
-                spinnerStage.classList.add('is-visible');
-            }, splashDuration);
-
-            window.setTimeout(hideLoader, splashDuration + spinnerDuration);
+            if (localStorage.getItem(loaderKey)) {
+                loader.remove();
+            } else {
+                document.body.classList.add('overflow-hidden');
+                window.setTimeout(showSpinner, spinnerLead);
+                window.setTimeout(hideLoader, splashDuration);
+            }
         } else {
             document.body.classList.remove('overflow-hidden');
         }
     </script>
 </body>
 </html>
-

@@ -1,0 +1,18 @@
+{
+  "name": "Coder2Career",
+  "short_name": "C2C",
+  "id": "https://coder2career.com/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

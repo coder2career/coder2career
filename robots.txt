@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://coder2career.com/sitemap.xml

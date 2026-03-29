@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Coder2Career</title>
+  <defs>
+    <linearGradient id="c2cGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#c2cGradient)" />
+  <path d="M24 22h18v5H29v10h11v5H24V22Z" fill="#fff" />
+  <circle cx="19" cy="32" r="4" fill="#93c5fd" />
+  <circle cx="45" cy="32" r="4" fill="#93c5fd" />
+</svg>
