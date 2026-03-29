@@ -73,6 +73,10 @@
             #site-loader {
                 display: none !important;
             }
+
+            body {
+                overflow: auto !important;
+            }
         </style>
     </noscript>
     <style>
@@ -207,7 +211,7 @@
         }
     </style>
 </head>
-<body class="bg-white text-secondary font-sans">
+<body class="bg-white text-secondary font-sans overflow-hidden">
     <div id="site-loader" class="fixed inset-0 z-[9999]" aria-live="polite" aria-label="Loading Coder2Career homepage">
         <div id="splash-stage" class="loader-stage splash-stage-bg is-visible">
             <img src="banner.jpg" alt="Coder2Career banner" class="splash-banner">
@@ -413,9 +417,8 @@
         const loader = document.getElementById('site-loader');
         const splashStage = document.getElementById('splash-stage');
         const spinnerStage = document.getElementById('spinner-stage');
-        const loaderKey = 'c2c_loaded';
-        const splashDuration = 1200;
-        const spinnerLead = 900;
+        const splashDuration = 4000;
+        const spinnerDuration = 4000;
 
         if (loader && splashStage && spinnerStage) {
             let loaderDismissed = false;
@@ -439,19 +442,14 @@
                 loaderDismissed = true;
                 loader.classList.add('is-hidden');
                 document.body.classList.remove('overflow-hidden');
-                localStorage.setItem(loaderKey, '1');
                 window.setTimeout(() => {
                     loader.remove();
                 }, 700);
             };
 
-            if (localStorage.getItem(loaderKey)) {
-                loader.remove();
-            } else {
-                document.body.classList.add('overflow-hidden');
-                window.setTimeout(showSpinner, spinnerLead);
-                window.setTimeout(hideLoader, splashDuration);
-            }
+            document.body.classList.add('overflow-hidden');
+            window.setTimeout(showSpinner, splashDuration);
+            window.setTimeout(hideLoader, splashDuration + spinnerDuration);
         } else {
             document.body.classList.remove('overflow-hidden');
         }
